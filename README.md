@@ -1,15 +1,15 @@
-#CAMPUS LOST & FOUND SYSTEM
+**CAMPUS LOST & FOUND SYSTEM**
 
-Name: Sejal Langah
-Institute: THE SUFI INSTITUTE (LUARI SHARIF)
-Instructor Name: Miss Chandni Talpur
-Project: Class Activity Project
+**Name: Sejal Langah
+**Institute: THE SUFI INSTITUTE (LUARI SHARIF)
+**Instructor Name: Miss Chandni Talpur
+**Project: Class Activity Project
 Created a Campus Lost & Found Management System in Java
-Email: sejallangah@gmail.com
+**Email: sejallangah@gmail.com
 
 ---
 
-Project Description
+**Project Description
 
 The Campus Lost & Found System is a Java-based console application designed to help students report, search, and manage lost and found items within a campus.
 
@@ -17,13 +17,13 @@ The system provides an easy way for students to report lost belongings, report i
 
 ---
 
-Project Objective
+**Project Objective
 
 The main objective of this project is to create a simple and useful digital solution for managing lost and found items on campus while applying important Java programming concepts.
 
 ---
 
-Features
+**Features
 
 - Report Lost Item
 - Report Found Item
@@ -36,7 +36,7 @@ Features
 
 ---
 
-Technologies Used
+**Technologies Used
 
 - Java
 - Object-Oriented Programming (OOP)
@@ -51,7 +51,7 @@ Technologies Used
 
 ---
 
-Concepts Applied
+**Concepts Applied
 
 This project demonstrates the practical use of:
 
@@ -72,7 +72,7 @@ This project demonstrates the practical use of:
 
 ---
 
-Project Highlights
+**Project Highlights
 
 The project combines important Java programming concepts into one practical application.
 
@@ -80,10 +80,10 @@ It provides a simple and organized way to manage campus lost and found reports a
 
 ---
 
-Purpose
+**Purpose
 
 This project was developed as an academic Class Activity Project to improve practical programming skills and understanding of Java programming concepts.
 
 ---
 
-If you find this project interesting, feel free to explore the code and learn from it.
+**If you find this project interesting, feel free to explore the code and learn from it.
