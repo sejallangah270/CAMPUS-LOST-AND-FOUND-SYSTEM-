@@ -1,0 +1,242 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class CampusLostFound {
+
+    static Scanner input = new Scanner(System.in);
+    static ArrayList<Item> items = new ArrayList<>();
+
+    // Item Class
+    static class Item {
+        String type;
+        String itemName;
+        String description;
+        String location;
+        String studentName;
+        String contact;
+
+        Item(String type, String itemName, String description,
+             String location, String studentName, String contact) {
+
+            this.type = type;
+            this.itemName = itemName;
+            this.description = description;
+            this.location = location;
+            this.studentName = studentName;
+            this.contact = contact;
+        }
+
+        void displayItem() {
+            System.out.println("----------------------------------");
+            System.out.println("Type        : " + type);
+            System.out.println("Item        : " + itemName);
+            System.out.println("Description : " + description);
+            System.out.println("Location    : " + location);
+            System.out.println("Student     : " + studentName);
+            System.out.println("Contact     : " + contact);
+        }
+    }
+
+    // Add Lost Item
+    static void reportLostItem() {
+
+        System.out.println("\n===== REPORT LOST ITEM =====");
+
+        System.out.print("Enter item name: ");
+        String itemName = input.nextLine();
+
+        System.out.print("Enter description: ");
+        String description = input.nextLine();
+
+        System.out.print("Where did you lose it? ");
+        String location = input.nextLine();
+
+        System.out.print("Enter your name: ");
+        String studentName = input.nextLine();
+
+        System.out.print("Enter contact: ");
+        String contact = input.nextLine();
+
+        items.add(new Item(
+                "LOST",
+                itemName,
+                description,
+                location,
+                studentName,
+                contact
+        ));
+
+        System.out.println("\n✅ Lost item reported successfully!");
+    }
+
+    // Add Found Item
+    static void reportFoundItem() {
+
+        System.out.println("\n===== REPORT FOUND ITEM =====");
+
+        System.out.print("Enter item name: ");
+        String itemName = input.nextLine();
+
+        System.out.print("Enter description: ");
+        String description = input.nextLine();
+
+        System.out.print("Where did you find it? ");
+        String location = input.nextLine();
+
+        System.out.print("Enter your name: ");
+        String studentName = input.nextLine();
+
+        System.out.print("Enter contact: ");
+        String contact = input.nextLine();
+
+        items.add(new Item(
+                "FOUND",
+                itemName,
+                description,
+                location,
+                studentName,
+                contact
+        ));
+
+        System.out.println("\n✅ Found item reported successfully!");
+    }
+
+    // View All Items
+    static void viewAllItems() {
+
+        System.out.println("\n========== ALL REPORTS ==========");
+
+        if (items.isEmpty()) {
+            System.out.println("No reports available.");
+            return;
+        }
+
+        for (Item item : items) {
+            item.displayItem();
+        }
+    }
+
+    // Search Item
+    static void searchItem() {
+
+        System.out.println("\n========== SEARCH ITEM ==========");
+
+        System.out.print("Enter item name to search: ");
+        String search = input.nextLine().toLowerCase();
+
+        boolean found = false;
+
+        for (Item item : items) {
+
+            if (item.itemName.toLowerCase().contains(search)) {
+
+                item.displayItem();
+                found = true;
+            }
+        }
+
+        if (!found) {
+            System.out.println("❌ No matching item found.");
+        }
+    }
+
+    // Find Possible Matches
+    static void findMatches() {
+
+        System.out.println("\n========== POSSIBLE MATCHES ==========");
+
+        boolean matchFound = false;
+
+        for (int i = 0; i < items.size(); i++) {
+
+            for (int j = i + 1; j < items.size(); j++) {
+
+                Item first = items.get(i);
+                Item second = items.get(j);
+
+                if (first.type.equals("LOST")
+                        && second.type.equals("FOUND")
+                        && first.itemName.equalsIgnoreCase(second.itemName)) {
+
+                    System.out.println("\n🔔 POSSIBLE MATCH FOUND!");
+
+                    System.out.println("Lost Report:");
+                    first.displayItem();
+
+                    System.out.println("Found Report:");
+                    second.displayItem();
+
+                    matchFound = true;
+                }
+            }
+        }
+
+        if (!matchFound) {
+            System.out.println("No possible matches found.");
+        }
+    }
+
+    // Main Menu
+    static void menu() {
+
+        while (true) {
+
+            System.out.println("\n====================================");
+            System.out.println("       CAMPUS LOST & FOUND");
+            System.out.println("====================================");
+
+            System.out.println("1. Report Lost Item");
+            System.out.println("2. Report Found Item");
+            System.out.println("3. View All Reports");
+            System.out.println("4. Search Item");
+            System.out.println("5. Find Possible Matches");
+            System.out.println("6. Exit");
+
+            System.out.print("\nEnter your choice: ");
+
+            String choice = input.nextLine();
+
+            switch (choice) {
+
+                case "1":
+                    reportLostItem();
+                    break;
+
+                case "2":
+                    reportFoundItem();
+                    break;
+
+                case "3":
+                    viewAllItems();
+                    break;
+
+                case "4":
+                    searchItem();
+                    break;
+
+                case "5":
+                    findMatches();
+                    break;
+
+                case "6":
+                    System.out.println("\nThank you for using Campus Lost & Found!");
+                    return;
+
+                default:
+                    System.out.println("❌ Invalid choice. Please try again.");
+            }
+        }
+    }
+
+    // Main Method
+    public static void main(String[] args) {
+
+        System.out.println("====================================");
+        System.out.println("   WELCOME TO CAMPUS LOST & FOUND");
+        System.out.println("====================================");
+
+        System.out.println("Find it. Report it. Return it.");
+
+        menu();
+    }
+}
