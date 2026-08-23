@@ -5,7 +5,7 @@ Institute: THE SUFI INSTITUTE (LUARI SHARIF).
 Instructor Name: Miss Chandni Talpur.
 project: Class Activity Project.
 Created a Campus Lost & Found Management System in Java.
-Email: sejallangah@gmail.com
+Email: sejallangah@gmail.com.
 
 ---
 
